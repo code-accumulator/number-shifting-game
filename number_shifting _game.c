@@ -67,6 +67,7 @@ int main()
             temp_column = column;
             swap_1 = array[temp_row][temp_column];
             ch = getch();
+            Beep(80,300);
 
             switch (ch)
             {
@@ -95,8 +96,15 @@ int main()
                     count --;
                 break;
             case 'l'://
-    
-                    count +=3;
+                    if(count <= 17)
+                        count +=3;
+                    else
+                    {
+                        printf(YEL"\n\n\n\t\t\t\t\t\t\tYOU HAVE EXCEED THE LIFE LIMIT"RESET);
+                        Sleep(1000);
+                    }
+                        
+                    
                 break;
             
             case 27:
@@ -511,7 +519,7 @@ void display()
     char str_2[10] = "Hii... ";
     char str_1[30];
     char str_3[30] = " Welcome to the Puzzle world ";
-    // char str_4[50] = " \'.... Rewire your brain  with Puzzle Game ....\' ";
+    char str_4[60] = " Use your headphone to get the best experience ....";
     char str_5[50] = "Press Enter key to continue this game ";
 
     printf("\t\t\t\t\t\t\t\n");
@@ -544,13 +552,13 @@ void display()
         printf(BLU"%c"RESET,str_3[i]);
         Sleep(70);
     }
-    // printf("\n\n\n\t\t\t\t");
-    // for ( i = 0; str_4[i]; i++)
-    // {
-    //     Beep(80,80);
-    //     printf(MAG"%c"RESET,str_4[i]);
-    //     Sleep(80);
-    // }
+    printf("\n\n\n\t\t\t\t");
+    for ( i = 0; str_4[i]; i++)
+    {
+        
+        printf(MAG"%c"RESET,str_4[i]);
+        Sleep(80);
+    }
     printf("\n\n\n\t\t\t\t");
 
     for ( i = 0; str_5[i]; i++)
@@ -783,7 +791,7 @@ void display_loose()
     int i;
     char str_5[50] = "BETTER LUCK NEXT TIME ";
     char str_6[50] = "PRESS \'ESC\' KEY TO EXIT FROM THE GAME. ";
-    char str_7[50] = "PRESS ANY TO CONTINUE THE GAME";
+    char str_7[50] = "PRESS ANY KEY TO CONTINUE THE GAME";
 
 
     printf("\n\n\n\n\n\n\n\n\n\n\n");
